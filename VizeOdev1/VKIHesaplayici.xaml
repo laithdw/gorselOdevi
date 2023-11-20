@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VizeOdev.VKIHesaplayici"
+             Title="Vücut Kitle İndeksi Hesaplayıcı" BackgroundColor="Black">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label Text="Boy (cm):" FontSize="Medium" />
+            <Entry x:Name="EntryHeight" Placeholder="Boy (ör. 170)" Keyboard="Numeric" TextColor="White" />
+
+            <Label Text="Kilo (kg):" FontSize="Medium" Margin="0,10,0,0" />
+            <Entry x:Name="EntryWeight" Placeholder="Kilo (ör. 70)" Keyboard="Numeric" />
+
+            <Button Text="Hesapla" Clicked="OnCalculateButtonClicked" Margin="0,20,0,0" />
+
+            <Label x:Name="LabelResult" FontSize="Large" TextColor="Blue" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

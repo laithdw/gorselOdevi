@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VizeOdev.KrediHesaplayici"
+             Title="Kredi Hesaplayıcı">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <Label Text="Kredi Türü" />
+            <Picker x:Name="PickerLoanType">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>İhtiyaç</x:String>
+                        <x:String>Konut</x:String>
+                        <x:String>Taşıt</x:String>
+                        <x:String>Ticari</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Kredi Tutarı" />
+            <Entry x:Name="EntryLoanAmount" Placeholder="Kredi Tutarını Girin" Keyboard="Numeric" Completed="OnEntryCompleted" />
+            <Slider x:Name="SliderLoanAmount" Minimum="100" Maximum="1000000" ValueChanged="OnSliderValueChanged" />
+
+            <Label Text="Yıllık Faiz Oranı (%)" />
+            <Entry x:Name="EntryInterestRate" Placeholder="Yıllık Faiz Oranını Girin" Keyboard="Numeric" Completed="OnEntryCompleted" />
+            <Slider x:Name="SliderInterestRate" Minimum="0.1" Maximum="90" ValueChanged="OnSliderValueChanged" />
+
+            <Label Text="Kredi Süresi (Ay)" />
+            <Entry x:Name="EntryLoanTerm" Placeholder="Kredi Süresini Girin" Keyboard="Numeric" Completed="OnEntryCompleted" />
+            <Slider x:Name="SliderLoanTerm" Minimum="1" Maximum="3360" ValueChanged="OnSliderValueChanged" />
+
+            <Button Text="Kredi Hesapla" Clicked="OnCalculateButtonClicked" />
+
+            <Label x:Name="LabelResult" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
